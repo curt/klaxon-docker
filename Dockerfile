@@ -2,6 +2,7 @@ FROM elixir:1.14.3-alpine AS build
 ENV MIX_ENV=prod
 
 RUN apk add git gcc g++ musl-dev make cmake postgresql-client
+ARG GIT_CACHE=true
 RUN git clone https://github.com/curt/klaxon.git /opt/klaxon
 
 WORKDIR /opt/klaxon
@@ -20,7 +21,7 @@ FROM alpine AS dist
 ENV MIX_ENV=prod
 EXPOSE 4000
 
-RUN apk add postgresql-client libstdc++ openssl ncurses-libs
+RUN apk --no-cache add postgresql-client libstdc++ openssl ncurses-libs
 
 RUN addgroup -g 1000 klaxon
 RUN adduser -u 1000 -G klaxon -D -h /opt/klaxon klaxon
