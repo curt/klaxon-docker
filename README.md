@@ -42,10 +42,5 @@ your desktop, you can point a browser to <http://localhost:4001>.
 
 ## Road map
 
-Right now, this was a quick-and-dirty way to build a running Klaxon application
-directly from the source code repository. It may be more elegant for the first
-stage to build a release version, in which case the second stage could perhaps
-be lighter still.
-
 Once the Klaxon application has developed more fully, it would be nice to
 register the image on [Docker Hub](https://hub.docker.com/).

@@ -7,7 +7,7 @@ while ! pg_isready -U ${DB_USER:-klaxon} -d postgres://${DB_HOST:-db}:5432/${DB_
 done
 
 echo "-- Running migrations ..."
-mix ecto.migrate
+bin/migrate
 
 echo "-- Starting!"
-mix phx.server
+bin/server
